@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Profile - EMS</title>
+    <link rel="stylesheet" href="/static/css/view_profile.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <div class="avatar-circle">
+                        <span id="avatar-initials">--</span>
+                    </div>
+                </div>
+                <div class="profile-title">
+                    <h1 id="full-name">Loading...</h1>
+                    <p id="employee-role">Employee</p>
+                    <span class="status-badge" id="status-badge">Active</span>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="info-section">
+                    <h3>Personal Information</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Employee ID</label>
+                            <span id="employee-id">--</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Email Address</label>
+                            <span id="email">--</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Phone Number</label>
+                            <span id="phone">--</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Address</label>
+                            <span id="address">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Employment Details</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Role</label>
+                            <span id="role">--</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Salary</label>
+                            <span id="salary">--</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Join Date</label>
+                            <span id="created-at">--</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Last Updated</label>
+                            <span id="updated-at">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <button class="btn btn-secondary" onclick="goBack()">Back to Dashboard</button>
+            </div>
+        </div>
+
+        <div class="loading-overlay" id="loading-overlay">
+            <div class="spinner"></div>
+            <p>Loading profile...</p>
+        </div>
+
+        <div class="error-message" id="error-message" style="display: none;">
+            <p>Failed to load profile. Please try again.</p>
+            <button onclick="loadProfile()">Retry</button>
+        </div>
+    </div>
+
+    <script src="/static/js/view_profile.js"></script>
+</body>
+</html>

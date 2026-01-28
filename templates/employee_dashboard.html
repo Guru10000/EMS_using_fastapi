@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard - EMS</title>
+    <link rel="stylesheet" href="/static/css/employee_dashboard.css">
+</head>
+<body>
+    <!-- Top Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <h2>Welcome, Employee</h2>
+        </div>
+        <div class="nav-right">
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3>EMS Employee</h3>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="view-profile" onclick="showSection('profile')">Profile</a></li>
+            <li><a href="leave-page" onclick="showSection('leave')">Leave</a></li>
+            <li><a href="my-salary-page" onclick="showSection('salary')">Salary</a></li>
+            <li><a href="/settings/settings-page">Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="dashboard-header">
+            <h1>Employee Dashboard</h1>
+            <p class="dashboard-subtitle">Welcome to your Employee Portal</p>
+        </div>
+        
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon employees">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3>My Profile</h3>
+                    <p class="stat-number" id="employee-status">Active</p>
+                    <span class="stat-change positive">Employee status</span>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon attendance">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12,6 12,12 16,14"></polyline>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3>My Attendance</h3>
+                    <p class="stat-number" id="my-attendance">Loading...</p>
+                    <span class="stat-change positive">This month</span>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon leaves">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14,2 14,8 20,8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3>Leave Balance</h3>
+                    <p class="stat-number" id="leave-balance">Loading...</p>
+                    <span class="stat-change neutral">Days remaining</span>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon departments">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3>Current Salary</h3>
+                    <p class="stat-number" id="current-salary">Loading...</p>
+                    <span class="stat-change positive">Monthly</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="actions-grid">
+                <a href="#" onclick="showSection('profile')" class="action-card">
+                    <div class="action-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3>View Profile</h3>
+                    <p>Check your profile details</p>
+                </a>
+                
+                <a href="#" onclick="showSection('leave')" class="action-card">
+                    <div class="action-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14,2 14,8 20,8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                    </div>
+                    <h3>Apply for Leave</h3>
+                    <p>Submit leave request</p>
+                </a>
+                
+                <a href="#" onclick="showSection('salary')" class="action-card">
+                    <div class="action-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h3>View Salary</h3>
+                    <p>Check salary details</p>
+                </a>
+                
+                <a href="/settings/settings-page" class="action-card">
+                    <div class="action-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                    </div>
+                    <h3>Settings</h3>
+                    <p>Update your preferences</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Content Sections -->
+        <div id="profile" class="content-section" style="display: none;">
+            <h2>My Profile</h2>
+            <p>Profile details will be loaded here</p>
+        </div>
+
+        <div id="leave" class="content-section" style="display: none;">
+            <h2>Leave Management</h2>
+            <p>Leave requests and balance will be shown here</p>
+        </div>
+
+        <div id="salary" class="content-section" style="display: none;">
+            <h2>Salary Information</h2>
+            <p>Salary details and history will be displayed here</p>
+        </div>
+    </div>
+
+    <script src="/static/js/employee_dashboard.js?v=1"></script>
+</body>
+</html>

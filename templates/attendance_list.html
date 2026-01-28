@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management - EMS</title>
+    <link rel="stylesheet" href="/static/css/attendance_list.css">
+</head>
+<body>
+    <!-- Top Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <h2>Admin Dashboard</h2>
+        </div>
+        <div class="nav-right">
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content-header">
+            <div class="page-title">
+                <h1>Attendance Management</h1>
+                <p id="currentDate">Today's Date</p>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search employees..." onkeyup="filterTable()">
+            </div>
+        </div>
+
+        <!-- Employee Table -->
+        <div class="table-container">
+            <table class="attendance-table">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Role</th>
+                        <th>Attendance Status</th>
+                    </tr>
+                </thead>
+                <tbody id="attendanceTableBody">
+                    <!-- Data will be loaded via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Bottom Actions -->
+        <div class="bottom-actions">
+            <button class="back-btn" onclick="goBack()">← Back to Dashboard</button>
+        </div>
+    </div>
+
+    <script src="/static/js/attendance_list.js"></script>
+</body>
+</html>

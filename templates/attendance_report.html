@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Report - EMS</title>
+    <link rel="stylesheet" href="/static/css/attendance_report.css">
+</head>
+<body>
+    <!-- Top Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <h2>Admin Dashboard</h2>
+        </div>
+        <div class="nav-right">
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content-header">
+            <div class="page-title">
+                <h1>Attendance Report</h1>
+                <p id="reportSummary">Loading report...</p>
+            </div>
+            <div class="filter-container">
+                <div class="date-filters">
+                    <input type="date" id="startDate" placeholder="Start Date">
+                    <input type="date" id="endDate" placeholder="End Date">
+                    <button class="filter-btn" onclick="generateReport()">Generate Report</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Report Table -->
+        <div class="table-container">
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Employee ID</th>
+                        <th>Employee Name</th>
+                        <th>Department</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="reportTableBody">
+                    <!-- Data will be loaded via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Bottom Actions -->
+        <div class="bottom-actions">
+            <button class="export-btn" onclick="exportReport()">Export Report</button>
+            <button class="back-btn" onclick="goBack()">← Back to Dashboard</button>
+        </div>
+    </div>
+
+    <script src="/static/js/attendance_report.js"></script>
+</body>
+</html>

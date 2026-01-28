@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Salary - EMS</title>
+    <link rel="stylesheet" href="/static/css/add_salary.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h1>Add Employee Salary</h1>
+            <p id="employeeInfo">Loading employee information...</p>
+        </div>
+
+        <form id="salaryForm" class="salary-form">
+            <div class="form-group">
+                <label for="employee_id">Employee ID *</label>
+                <input type="text" id="employee_id" name="employee_id" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="month">Month *</label>
+                <input type="month" id="month" name="month" required>
+            </div>
+
+            <div class="form-group">
+                <label for="basic_salary">Basic Salary *</label>
+                <input type="number" id="basic_salary" name="basic_salary" step="0.01" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="deduction">Deduction</label>
+                <input type="number" id="deduction" name="deduction" step="0.01" min="0" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="net_salary">Net Salary</label>
+                <input type="number" id="net_salary" name="net_salary" step="0.01" readonly>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn-cancel" onclick="goBack()">Cancel</button>
+                <button type="submit" class="btn-submit">Add Salary</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/static/js/add_salary.js"></script>
+</body>
+</html>

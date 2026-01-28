@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details - EMS</title>
+    <link rel="stylesheet" href="/static/css/view.css">
+</head>
+<body>
+    <div class="employee-card">
+        <div class="profile-section">
+            <div class="profile-image" id="profileImage">
+                <!-- Employee initials will be displayed here -->
+            </div>
+            <div class="employee-name" id="employeeName">John Doe</div>
+            <div class="employee-id" id="employeeId">EMP001</div>
+        </div>
+
+        <div class="details-section">
+            <div class="detail-item">
+                <span class="detail-label">Department</span>
+                <span class="detail-value" id="department">IT Department</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Role</span>
+                <span class="detail-value" id="role">Employee</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Contact Number</span>
+                <span class="detail-value" id="contactNumber">+1 234 567 8900</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Email</span>
+                <span class="detail-value" id="email">john.doe@company.com</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Address</span>
+                <span class="detail-value" id="address">123 Main Street, City, State 12345</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Date of Birth</span>
+                <span class="detail-value" id="dateOfBirth">January 15, 1990</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Salary</span>
+                <span class="detail-value" id="salary">$75,000</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Status</span>
+                <span class="detail-value" id="status">Active</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Created At</span>
+                <span class="detail-value" id="createdAt">January 15, 2023</span>
+            </div>
+        </div>
+
+        <button class="back-button" onclick="goBack()">← Back to List</button>
+    </div>
+
+    <script src="/static/js/view.js"></script>
+</body>
+</html>

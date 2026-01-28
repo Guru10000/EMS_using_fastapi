@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Leaves - EMS</title>
+    <link rel="stylesheet" href="/static/css/leave_page.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>My Leave Applications</h1>
+            <div class="header-info">
+                <span id="employee-id">Employee ID: --</span>
+                <span id="total-applications">Total Applications: 0</span>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <div class="table-header">
+                <h2>Leave History</h2>
+                <button class="btn btn-primary" onclick="goBack()">Back to Dashboard</button>
+            </div>
+
+            <div class="table-wrapper">
+                <table id="leaves-table">
+                    <thead>
+                        <tr>
+                            <th>Leave ID</th>
+                            <th>Leave Type</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Days</th>
+                            <th>Status</th>
+                            <th>Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaves-tbody">
+                        <!-- Leave data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="empty-state" id="empty-state" style="display: none;">
+                <div class="empty-icon">📋</div>
+                <h3>No Leave Applications Found</h3>
+                <p>You haven't applied for any leaves yet.</p>
+            </div>
+        </div>
+
+        <div class="bottom-actions">
+            <button class="btn btn-apply" onclick="applyForLeave()">Apply for Leave</button>
+        </div>
+
+        <div class="loading-overlay" id="loading-overlay">
+            <div class="spinner"></div>
+            <p>Loading leave applications...</p>
+        </div>
+
+        <div class="error-message" id="error-message" style="display: none;">
+            <div class="error-icon">⚠️</div>
+            <h3>Failed to Load Leaves</h3>
+            <p>Unable to fetch your leave applications. Please try again.</p>
+            <button class="btn btn-retry" onclick="loadLeaves()">Retry</button>
+        </div>
+    </div>
+
+    <script src="/static/js/leave_page.js"></script>
+</body>
+</html>

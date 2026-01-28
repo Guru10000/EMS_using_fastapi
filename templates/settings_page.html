@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="/static/css/settings_page.css">
+</head>
+<body>
+    <div class="settings-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Settings</h2>
+            <ul class="sidebar-menu">
+                <li><a href="#" onclick="showSection('profile')" class="active">Profile</a></li>
+                <li><a href="#" onclick="showSection('password')">Change Password</a></li>
+                <li><a href="#" onclick="showSection('phone')">Update Phone</a></li>
+                <li><a href="#" onclick="showSection('address')">Update Address</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Container -->
+        <div class="main-content">
+            <!-- Profile Section -->
+            <div id="profile" class="content-section active">
+                <h2>Profile</h2>
+                <div class="profile-card">
+                    <div class="profile-info">
+                        <div class="info-row">
+                            <label>Employee ID:</label>
+                            <span id="employee-id">Loading...</span>
+                        </div>
+                        <div class="info-row">
+                            <label>Full Name:</label>
+                            <span id="full-name">Loading...</span>
+                        </div>
+                        <div class="info-row">
+                            <label>Email:</label>
+                            <span id="profile-email">Loading...</span>
+                        </div>
+                        <div class="info-row">
+                            <label>Phone:</label>
+                            <span id="profile-phone">Loading...</span>
+                        </div>
+                        <div class="info-row">
+                            <label>Address:</label>
+                            <span id="profile-address">Loading...</span>
+                        </div>
+                        <div class="info-row">
+                            <label>Role:</label>
+                            <span id="profile-role">Loading...</span>
+                        </div>
+                        <div class="info-row">
+                            <label>Salary:</label>
+                            <span id="profile-salary">Loading...</span>
+                        </div>
+                        <div class="info-row">
+                            <label>Status:</label>
+                            <span id="profile-status">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Change Password Section -->
+            <div id="password" class="content-section">
+                <h2>Change Password</h2>
+                <form class="settings-form" onsubmit="handlePasswordChange(event)">
+                    <div class="form-group">
+                        <label for="current-password">Current Password</label>
+                        <input type="password" id="current-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" required>
+                    </div>
+                    <button type="submit" class="btn">Change Password</button>
+                </form>
+            </div>
+
+            <!-- Update Phone Section -->
+            <div id="phone" class="content-section">
+                <h2>Update Phone Number</h2>
+                <form class="settings-form" onsubmit="handlePhoneUpdate(event)">
+                    <div class="form-group">
+                        <label for="phone-number">Phone Number</label>
+                        <input type="tel" id="phone-number" required>
+                    </div>
+                    <button type="submit" class="btn">Update Phone</button>
+                </form>
+            </div>
+
+            <!-- Update Address Section -->
+            <div id="address" class="content-section">
+                <h2>Update Address</h2>
+                <div class="address-container">
+                    <div class="address-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <form class="settings-form address-form" onsubmit="handleAddressUpdate(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="street">Street Address</label>
+                                <input type="text" id="street" placeholder="123 Main Street" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="city">City</label>
+                                <input type="text" id="city" placeholder="New York" required>
+                            </div>
+                            <div class="form-group half">
+                                <label for="state">State</label>
+                                <input type="text" id="state" placeholder="NY" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="zip">ZIP Code</label>
+                                <input type="text" id="zip" placeholder="10001" required>
+                            </div>
+                            <div class="form-group half">
+                                <label for="country">Country</label>
+                                <input type="text" id="country" placeholder="USA" value="USA">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn address-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            Update Address
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/settings_page.js"></script>
+</body>
+</html>

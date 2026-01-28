@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Salary - EMS</title>
+    <link rel="stylesheet" href="/static/css/my_salary.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>My Salary Records</h1>
+            <div class="header-info">
+                <span id="employee-id">Employee ID: --</span>
+                <span id="total-records">Total Records: 0</span>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <div class="table-header">
+                <h2>Salary History</h2>
+                <button class="btn btn-primary" onclick="goBack()">Back to Dashboard</button>
+            </div>
+
+            <div class="table-wrapper">
+                <table id="salary-table">
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Month</th>
+                            <th>Basic Salary</th>
+                            <th>Deductions</th>
+                            <th>Net Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salary-tbody">
+                        <!-- Salary data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="summary-card">
+                <h3>Salary Summary</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <label>Total Basic Salary</label>
+                        <span id="total-basic">$0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <label>Total Deductions</label>
+                        <span id="total-deductions">$0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <label>Total Net Salary</label>
+                        <span id="total-net">$0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="empty-state" id="empty-state" style="display: none;">
+                <div class="empty-icon">💰</div>
+                <h3>No Salary Records Found</h3>
+                <p>You don't have any salary records yet.</p>
+            </div>
+        </div>
+
+        <div class="loading-overlay" id="loading-overlay">
+            <div class="spinner"></div>
+            <p>Loading salary records...</p>
+        </div>
+
+        <div class="error-message" id="error-message" style="display: none;">
+            <div class="error-icon">⚠️</div>
+            <h3>Failed to Load Salary Records</h3>
+            <p>Unable to fetch your salary information. Please try again.</p>
+            <button class="btn btn-retry" onclick="loadSalaries()">Retry</button>
+        </div>
+    </div>
+
+    <script src="/static/js/my_salary.js"></script>
+</body>
+</html>

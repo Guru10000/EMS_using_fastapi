@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Management - EMS</title>
+    <link rel="stylesheet" href="/static/css/leave_list.css">
+</head>
+<body>
+    <!-- Top Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <h2>Admin Dashboard</h2>
+        </div>
+        <div class="nav-right">
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content-header">
+            <div class="page-title">
+                <h1>Leave Management</h1>
+                <p id="leaveSummary">Loading leave applications...</p>
+            </div>
+            <div class="filter-container">
+                <select id="statusFilter" onchange="filterByStatus()">
+                    <option value="all">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Leave Table -->
+        <div class="table-container">
+            <table class="leave-table">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Employee ID</th>
+                        <th>Employee Name</th>
+                        <th>Leave Type</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Reason</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="leaveTableBody">
+                    <!-- Data will be loaded via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Bottom Actions -->
+        <div class="bottom-actions">
+            <button class="back-btn" onclick="goBack()">← Back to Dashboard</button>
+        </div>
+    </div>
+
+
+    <script src="/static/js/leave_list.js?v=3"></script>
+</body>
+</html>

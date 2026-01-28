@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environments
+venv/
+env/
+Lib/
+Scripts/
+pyvenv.cfg
+project1/
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+
+ems.db
+login_debug.txt
